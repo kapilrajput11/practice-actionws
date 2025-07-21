@@ -7,11 +7,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: creating file
         run: echo "create a file" > report.txt
+
+        - name: upload the file
+          uses: action/upload-artifact@v4
+          with:
+            name: report.txt
+            path: ./report.txt
+
   secondjob:
     runs-on: ubuntu-latest
 
     steps:
+      - name: download report.txt
+        uses: actions/download-artifact@v4
+        with:
+          name: report.txt
+          
       - name: viewing the file containts
         run: cat report.txt
