@@ -1,9 +1,11 @@
 name: workflow
+
 on: push
 
 jobs:
   firstjob:
     runs-on: ubuntu-latest
-      steps:
-        - name: creating file
-          run: echo" creat a file " > report.txt
+
+    steps:
+      - name: creating file
+        run: echo "create a file" > report.txt
