@@ -9,3 +9,9 @@ jobs:
     steps:
       - name: creating file
         run: echo "create a file" > report.txt
+  secondjob:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: viewing the file containts
+        run: cat report.txt
